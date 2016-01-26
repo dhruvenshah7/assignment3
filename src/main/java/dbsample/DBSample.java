@@ -39,7 +39,17 @@ public class DBSample {
         
         try {
             Connection conn = getConnection();
-            Statement stmt;
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from people");
+            
+            while(rs.next()){
+                String name = rs.getString("name");
+                String Bio = rs.getString("Bio");
+                output += "<p>"+name+" : "+Bio+" </p>"; 
+            }
+            
+            conn.close();
+            
         } catch (SQLException ex) {
             Logger.getLogger(DBSample.class.getName()).log(Level.SEVERE, null, ex);
         }
