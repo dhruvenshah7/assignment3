@@ -25,9 +25,9 @@ public class DBSample {
         }
 
         String host = System.getenv("OPENHOST_MYSQL_DB_HOST");
-        String port = System.getenv("OPENHOST_MYSQL_DB_port");
-        String username = System.getenv("OPENHOST_MYSQL_DB_username");
-        String password = System.getenv("OPENHOST_MYSQL_DB_password");
+        String port = System.getenv("OPENHOST_MYSQL_DB_PORT");
+        String username = System.getenv("OPENHOST_MYSQL_DB_USERNAME");
+        String password = System.getenv("OPENHOST_MYSQL_DB_PASSWORD");
         String name = "dbsample";
         String url = "jdbc:mysql://" + host + ":" + port + "/" + username;
         return DriverManager.getConnection(url, username, password);
@@ -44,7 +44,7 @@ public class DBSample {
             
             while(rs.next()){
                 String name = rs.getString("name");
-                String Bio = rs.getString("Bio");
+                String Bio = rs.getString("bio");
                 output += "<p>"+name+" : "+Bio+" </p>"; 
             }
             
