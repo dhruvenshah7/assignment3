@@ -53,7 +53,7 @@ public class DBSample {
         } catch (SQLException ex) {
             Logger.getLogger(DBSample.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return output;
         
     }
 }
